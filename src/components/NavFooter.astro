@@ -7,7 +7,10 @@ import menu from "../data/menu-footer.json";
     {
       menu.map((item) => (
         <li>
-          <a class="hover:text-brand font-gotham-light" href={item.link}>
+          <a
+            class="hover:text-brand font-gotham-light text-sm lg:text-base aria-[current='page']:underline decoration-brand underline-offset-4"
+            href={item.link}
+            aria-current={Astro.url.pathname === item.link ? "page" : null}>
             {item.label}
           </a>
         </li>

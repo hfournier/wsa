@@ -1,0 +1,9 @@
+---
+interface Props {
+  class: string;
+}
+
+const cssClass = Astro.props.class;
+---
+
+<div class="font-gotham-bold" class:list={cssClass}>En | Sv</div>

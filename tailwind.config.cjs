@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#ffcd00",
+        brand: "#F3D03E",
       },
       fontFamily: {
         calibri: ["Calibri", "sans-serif"],

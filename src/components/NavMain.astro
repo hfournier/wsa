@@ -2,16 +2,22 @@
 import menu from "../data/menu-main.json";
 ---
 
-<nav class="">
-  <ul class="flex gap-10">
-    {
-      menu.map((item) => (
-        <li>
-          <a class="hover:text-white font-gotham-bold" href={item.link}>
-            {item.label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+<nav
+  aria-label="Main Navigation"
+  class="absolute right-8 top-14 -z-10 flex -translate-y-[310px] flex-col gap-x-8 gap-y-4 bg-black/80 p-4 opacity-0 transition-all duration-700 ease-in-out
+  lg:static lg:z-0 lg:flex lg:w-auto lg:translate-y-0 lg:flex-row lg:items-center lg:py-0 lg:opacity-100 lg:bg-transparent">
+  {
+    menu.map((item) => (
+      <a
+        class="hover:text-white font-gotham-bold aria-[current='page']:underline decoration-brand underline-offset-4"
+        href={item.link}
+        aria-current={Astro.url.pathname === item.link ? "page" : null}>
+        {item.label}
+      </a>
+    ))
+  }
+  <div
+    class="font-gotham-light rounded-full px-4 py-1 border border-white text-sm w-36">
+    Search...
+  </div>
 </nav>

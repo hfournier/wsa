@@ -7,17 +7,17 @@ import map from "@assets/map.jpg";
 ---
 
 <BaseLayout title="WSA Law" description="A different kind of law firm">
-  <h1 class="font-gotham-light text-[4rem] pt-24">
+  <h1 class="font-gotham-light text-5xl lg:text-[4rem] pt-12 sm:pt-24 pb-6">
     A different kind of law firm
   </h1>
   <a
-    class="no-underline font-gotham-light mt-3 px-5 py-1 rounded-full self-start border border-[#ffcd00] hover:text-[#ffcd00]"
+    class="no-underline font-gotham-light px-5 py-1 rounded-full self-start border border-[#ffcd00] hover:text-[#ffcd00]"
     href="/employees">Hitta medarbetare</a
   >
   <div
-    class="pt-48 divide-solid divide-brand divide-y-2 space-y-12 w-4/5 mx-auto">
+    class="pt-36 lg:pt-48 divide-solid divide-brand divide-y-2 space-y-12 w-4/5 mx-auto">
     <section class="">
-      <h2 class="font-gotham-light text-4xl text-center pb-8">
+      <h2 class="font-gotham-light text-3xl lg:text-4xl text-center pb-8">
         Our business areas allow us to put your business first
       </h2>
       <div class="flex flex-col gap-6">
@@ -88,7 +88,8 @@ import map from "@assets/map.jpg";
     </section>
     <section class="pt-12">
       <h2 class="font-gotham-light text-4xl text-center pb-20">News</h2>
-      <div class="grid grid-cols-2 grid-rows-2 gap-0">
+      <div
+        class="grid lg:grid-cols-2 md:grid-rows-[minmax(0,_300px)_minmax(0,_200px)_minmax(0,_300px)_minmax(0,_200px)] lg:grid-rows-2 gap-8 lg:gap-0">
         <div class="flex flex-col gap-4 place-content-center p-6">
           <h2 class="font-gotham-light text-3xl">
             Our lawyers pursue issues that make a difference for your business
@@ -101,9 +102,8 @@ import map from "@assets/map.jpg";
         <Image
           src={folder}
           alt="Folder on desk with WSA Law business cards"
-          class="aspect-square object-cover"
+          class="aspect-square object-cover h-[200px] lg:h-auto w-full"
         />
-        <Image src={map} alt="Map of city" class="aspect-square object-cover" />
         <div class="flex flex-col gap-4 place-content-center p-6">
           <h2 class="font-gotham-light text-3xl">
             We have offices in Stockholm, Borås, Jönköping, Helsingborg, Malmö,
@@ -114,6 +114,11 @@ import map from "@assets/map.jpg";
             href="/contact">Contact us</a
           >
         </div>
+        <Image
+          src={map}
+          alt="Map of city"
+          class="aspect-square object-cover h-[200px] lg:h-auto w-full lg:col-start-1 lg:row-start-2"
+        />
       </div>
     </section>
   </div>

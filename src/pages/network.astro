@@ -7,9 +7,9 @@ import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="We want to be your business partner" description="">
-  <section class="pt-24">
+  <section class="pt-12 lg:pt-24">
     <h1 class="font-gotham-light text-[2.5rem] leading-tight">Our networks</h1>
-    <div class="flex justify-between pt-10">
+    <div class="flex flex-wrap justify-between pt-10">
       <div class="flex flex-col gap-4">
         <Image src={mackrell} alt="" />
         <div class="font-gotham-bold text-lg">Mackrell International</div>
@@ -36,14 +36,15 @@ import { Image } from "astro:assets";
       </div>
     </div>
   </section>
-  <section class="grid grid-cols-[minmax(0,_4fr)_minmax(0,_7fr)] gap-8 pt-24">
+  <section
+    class="grid md:grid-cols-[minmax(0,_4fr)_minmax(0,_7fr)] gap-12 md:gap-8 pt-24">
     <h2
-      class="col-start-1 row-start-1 font-gotham-light text-[2.5rem] leading-tight">
+      class="md:col-start-1 md:row-start-1 font-gotham-light text-[2.5rem] leading-tight">
       Both local and global
     </h2>
     <blockquote
-      class="relative col-start-1 row-start-1 self-center justify-self-end font-gotham-light text-right text-2xl
-             before:content-['”'] before:font-calibri before:text-8xl before:absolute before:left-0 before:-top-6 before:text-brand">
+      class="relative md:col-start-1 md:row-start-1 self-center justify-self-end font-gotham-light text-right text-xl md:text-2xl
+             before:content-['”'] before:font-calibri before:text-8xl before:absolute before:left-0 before:-top-10 before:text-brand">
       “Our competence in combination with our network means that we can always
       take an overall approach to your business.”
     </blockquote>

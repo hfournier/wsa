@@ -4,7 +4,8 @@ import NavOffices from "./NavOffices.astro";
 import NavSocial from "./NavSocial.astro";
 ---
 
-<div class="flex gap-8 pt-40 pb-14 justify-between">
+<div
+  class="flex flex-wrap sm:flex-nowrap gap-8 pt-20 sm:pt-40 pb-14 justify-between">
   <div class="flex flex-col gap-2">
     <h3 class="font-gotham-bold text-lg">Pages</h3>
     <NavFooter />
@@ -13,7 +14,7 @@ import NavSocial from "./NavSocial.astro";
     <h3 class="font-gotham-bold text-lg">Offices</h3>
     <NavOffices />
   </div>
-  <div class="flex flex-col gap-2 items-end">
+  <div class="flex flex-col gap-2 sm:items-end">
     <h3 class="font-gotham-bold text-lg">Social media</h3>
     <NavSocial />
   </div>
