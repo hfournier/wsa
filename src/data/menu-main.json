@@ -1,0 +1,7 @@
+[
+  { "label": "Employees", "link": "/employees" },
+  { "label": "Business Areas", "link": "/business-areas" },
+  { "label": "Jobs", "link": "/jobs" },
+  { "label": "Contact", "link": "/contact" },
+  { "label": "About us", "link": "/about-us" }
+]

@@ -1,0 +1,10 @@
+[
+  { "label": "Business Areas", "link": "/business-areas" },
+  { "label": "News & Insights", "link": "/news-insights" },
+  { "label": "Network", "link": "/network" },
+  { "label": "Jobs", "link": "/jobs" },
+  { "label": "About us", "link": "/about-us" },
+  { "label": "Employees", "link": "/employees" },
+  { "label": "Policies", "link": "/policies" },
+  { "label": "Contact", "link": "/contact" }
+]

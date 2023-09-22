@@ -1,0 +1,26 @@
+{
+  "name": { "first": "Christian", "last": "Bengtsson" },
+  "position": "Attorney at Law",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46 (0)70-230 53 43",
+  "email": "christian.bengtsson@wsa.se",
+  "photo": "@assets/employees/Christian_Bengtsson_8611_print-1000x1000.jpg",
+  "slug": "christian-bengtsson",
+  "description": "“It’s great to work with exciting assignments in a team of clever and resourceful legal experts. It makes me proud of our work.”",
+  "business_areas": [
+    "Environment",
+    "Energy & Real Estate",
+    "Mergers & Acquisitions"
+  ],
+  "areas_of_expertise": [
+    "Construction Contract Law",
+    "Real Estate and Tenancy Law",
+    "Company Acquisition and Contract Law",
+    "IT and GDPR"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Gothenburg University", "year": "2017" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://www.linkedin.com/in/christian-bengtsson-6320bb38"
+}

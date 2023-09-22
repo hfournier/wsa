@@ -1,0 +1,11 @@
+{
+  "name": { "first": "Pia", "last": "Andersson" },
+  "position": "Legal Assistant",
+  "office": ["Stockholm"],
+  "phone": "+46 (0)8-407 88 38",
+  "email": "pia.andersson@wsa.se",
+  "photo": "@assets/employees/WSA_Portratt_XXX_XXX35439portratt-1000x1000.jpg",
+  "slug": "pia-andersson",
+  "description": "”WSA is a firm where everybody works together to deliver solutions of the highest quality to our clients.”",
+  "languages": ["Swedish", "English"]
+}

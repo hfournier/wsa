@@ -1,0 +1,21 @@
+{
+  "name": { "first": "Henning", "last": "Albertsson" },
+  "position": "Partner and Attorney at Law",
+  "office": ["Jönköping"],
+  "phone": "+46 (0)36-35 12 17",
+  "email": "henning.albertsson@wsa.se",
+  "photo": "@assets/employees/WSA_portratt_Henning_Albertsson_PORTRATT-1000x1000.jpg",
+  "slug": "henning-albertsson",
+  "description": "“Our most significant feature is the very high competence found in our co-workers, and how every member of our team is enabled to fully explore this competence regardless of their role in a project. In combination with our firm roots in local business, this gives us a close relationship to, and great knowledge of the reality of our clients – to me, this is our greatest strength.”",
+  "business_areas": ["Corporate & Enterprise"],
+  "areas_of_expertise": [
+    "Intellectual Property Law",
+    "Marketing Law",
+    "Commercial Contract Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Stockholm University", "year": "2013" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://www.linkedin.com/in/henning-albertsson-b51b60117/"
+}

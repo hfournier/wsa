@@ -1,0 +1,16 @@
+{
+  "name": { "first": "Camilla", "last": "Andersson" },
+  "position": "Finance Manager",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46(0)73-622 62 47",
+  "email": "camilla.andersson@wsa.se",
+  "photo": "@assets/employees/Camilla_Andersson_8669_portratt-1000x1000.jpg",
+  "slug": "camilla-andersson",
+  "education": [
+    {
+      "degree": "Economic studies",
+      "school": "University of Borås / Gothenburg Univeristy"
+    }
+  ],
+  "languages": ["Swedisk", "English"]
+}

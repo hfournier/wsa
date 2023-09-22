@@ -1,0 +1,30 @@
+{
+  "name": { "first": "Carl", "last": "Gleisner" },
+  "position": "Legal Associate",
+  "office": ["Stockholm"],
+  "phone": "+46(0)73-039 95 88",
+  "email": "carl.gleisner@wsa.se",
+  "photo": "@assets/employees/Carl-1000x1000.jpg",
+  "slug": "carl-gleisner",
+  "description": "”I am motivated by being there for our clients and being able to help them, regardless of whether it is managing a difficult situation or developing their businesses. I am especially motivated by combining my knowledge in technology and law when assisting clients in technology intensive industries. Ask me about open source licensing.”",
+  "business_areas": ["Corporate & Enterprise", "Public Contracts"],
+  "areas_of_expertise": [
+    "IT and Telecom",
+    "GPDR",
+    "Procurement",
+    "Intellectual Property Law",
+    "Commercial Contracts Law",
+    "Procedural and Arbitration Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Uppsala University", "year": "2016" },
+    { "degree": "B.Sc.", "school": "Uppsala University", "year": "2013" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://www.linkedin.com/in/carlgleisner/",
+  "networks": [
+    "Member of The Swedish Association for IT & Law",
+    "Member of Free Software Foundation Europe – The Legal Network",
+    "The article ”Complex Copyright Works” (IMC Papers Series 2016/1)"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": { "first": "Daniel", "last": "Ahlström" },
+  "position": "Legal Associate",
+  "office": ["Stockholm"],
+  "phone": "+46 (0)8-407 88 05",
+  "email": "daniel.ahlstrom@wsa.se",
+  "photo": "@assets/employees/WSA2022port_XXX_XXX26663portratt-1000x1000.jpg",
+  "slug": "daniel-ahlstrom-2"
+}

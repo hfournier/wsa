@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import NavMain from "./NavMain.astro";
+---
+
+<div class="flex justify-between items-center">
+  <a href="/">
+    <Image
+      class="w-[100px]"
+      src="/images/logo.png"
+      alt="WSA Law logo"
+      width="722"
+      height="560"
+    />
+  </a>
+  <NavMain />
+  <div
+    class="font-gotham-light rounded-full px-4 py-1 border border-white text-sm w-36">
+    Search...
+  </div>
+  <div class="font-gotham-bold">En | Sv</div>
+</div>

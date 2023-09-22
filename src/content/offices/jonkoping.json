@@ -1,0 +1,13 @@
+{
+  "name": "Jönköping",
+  "phone": "036-35 12 00",
+  "fax": "+46 (0)36-35 12 01",
+  "address": {
+    "street": "Vaggerydsgatan 1, Box 684",
+    "city": "Jönköping",
+    "postal": "SE- 55119"
+  },
+  "email": "jonkoping@wsa.se",
+  "link": "https://goo.gl/maps/ATk1PewKPyv",
+  "map": "@assets/maps/JKPG.png"
+}

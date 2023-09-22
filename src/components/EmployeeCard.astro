@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  employee: CollectionEntry<"employees">;
+}
+
+const { employee } = Astro.props;
+---
+
+<div class="flex flex-col gap-3">
+  <a class="" href={`/employees/${employee.id}`}>
+    <Image
+      src={employee.data.photo}
+      alt={`${employee.data.name.first} ${employee.data.name.last}`}
+      height={500}
+      width={500}
+      transition:name={`photo-${employee.id}`}
+    />
+  </a>
+  <div class="flex flex-col grow">
+    <h2 class="font-gotham-bold text-lg leading-tight">
+      {`${employee.data.name.first} ${employee.data.name.last}`}
+    </h2>
+    <div class="font-gotham-light leading-tight">
+      {employee.data.position} | {employee.data.office.join(", ")}
+    </div>
+  </div>
+  <div class="flex flex-col gap-1 pt-6 pb-2">
+    <a
+      class="no-underline font-gotham-bold text-xs hover:text-brand"
+      href={`tel:${employee.data.phone}`}>{employee.data.phone}</a
+    >
+    <a
+      class="no-underline font-gotham-bold text-xs hover:text-brand"
+      href={`mailto:${employee.data.email}`}>{employee.data.email}</a
+    >
+  </div>
+  <a
+    class="no-underline font-gotham-light mb-5 px-5 py-1 rounded-full self-start border border-[#ffcd00] hover:text-[#ffcd00]"
+    href={`/employees/${employee.id}`}>Read more</a
+  >
+</div>

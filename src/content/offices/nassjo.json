@@ -1,0 +1,13 @@
+{
+  "name": "Nässjö",
+  "phone": "036-35 12 00",
+  "fax": "+46 (0)36-35 12 01",
+  "address": {
+    "street": "Storgatan 29",
+    "city": "Nässjö",
+    "country": "Sweden"
+  },
+  "email": "jonkoping@wsa.se",
+  "link": "https://goo.gl/maps/hmHxwnkdAZz",
+  "map": "@assets/maps/NASSJO.png"
+}

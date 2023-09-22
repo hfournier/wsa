@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("employees");
+  return entries.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"employees">;
+}
+const { entry } = Astro.props;
+---
+
+<BaseLayout
+  title={`${entry.data.name.first} ${entry.data.name.last}`}
+  description="">
+  <div class="pt-24 pb-3">
+    <a
+      class="font-gotham-bold text-lg hover:text-brand no-underline"
+      href="/employees">See all employees</a
+    >
+  </div>
+  <div class="grid grid-cols-[minmax(0,_1fr)_minmax(0,_2fr)] gap-6">
+    <div class="flex flex-col gap-2">
+      <Image
+        src={entry.data.photo}
+        alt={`${entry.data.name.first} ${entry.data.name.last}`}
+        height={500}
+        width={500}
+        transition:name={`photo-${entry.id}`}
+      />
+      <a
+        class="no-underline font-gotham-bold text-xs hover:text-brand"
+        href={`tel:${entry.data.phone}`}>{entry.data.phone}</a
+      >
+      <a
+        class="no-underline font-gotham-bold text-xs hover:text-brand"
+        href={`mailto:${entry.data.email}`}>{entry.data.email}</a
+      >
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-3">
+        <h1 class="font-gotham-bold text-lg">
+          {
+            `${entry.data.name.first} ${entry.data.name.last} - ${
+              entry.data.position
+            }, ${entry.data.office.join(", ")}`
+          }
+        </h1>
+        {
+          entry.data.description && (
+            <p class="leading-tight">{entry.data.description}</p>
+          )
+        }
+      </div>
+      {
+        entry.data.business_areas && entry.data.business_areas.length > 0 && (
+          <div class="flex flex-col gap-2">
+            <h2 class="font-gotham-bold uppercase">Business Areas</h2>
+            <p class="leading-tight">{entry.data.business_areas?.join(", ")}</p>
+          </div>
+        )
+      }
+      {
+        entry.data.areas_of_expertise &&
+          entry.data.areas_of_expertise.length > 0 && (
+            <div class="flex flex-col gap-2">
+              <h2 class="font-gotham-bold uppercase">Areas of Expertise</h2>
+              <p class="leading-tight">
+                {entry.data.areas_of_expertise?.join(", ")}
+              </p>
+            </div>
+          )
+      }
+      {
+        entry.data.education && entry.data.education.length > 0 && (
+          <div class="flex flex-col gap-2">
+            <h2 class="font-gotham-bold uppercase">Education</h2>
+            <ul class="flex flex-col gap-0">
+              {entry.data.education?.map((ed) => (
+                <li class="leading-tight">{`${ed.degree}, ${ed.school}${
+                  ed.year ? ", " + ed.year : ""
+                }`}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      {
+        entry.data.networks && entry.data.networks.length > 0 && (
+          <div class="flex flex-col gap-2">
+            <h2 class="font-gotham-bold uppercase">
+              Networks and Other Merits
+            </h2>
+            <ul class="flex flex-col gap-0">
+              {entry.data.networks?.map((network) => (
+                <li class="leading-tight">{network}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      {
+        entry.data.languages && entry.data.languages.length > 0 && (
+          <div class="flex flex-col gap-2">
+            <h2 class="font-gotham-bold uppercase">Language</h2>
+            <p class="leading-tight">{entry.data.languages?.join(", ")}</p>
+          </div>
+        )
+      }
+      {
+        entry.data.linkedIn && (
+          <a
+            class="underline underline-offset-2 hover:text-brand"
+            href={
+              entry.data.linkedIn
+            }>{`Find ${entry.data.name.first} on LinkedIn`}</a>
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>

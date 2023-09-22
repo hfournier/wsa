@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EmployeeCard from "@components/EmployeeCard.astro";
+
+const entries = (await getCollection("employees")).sort((a, b) => {
+  const nameA = a.data.name.last.toUpperCase(); // ignore upper and lowercase
+  const nameB = b.data.name.last.toUpperCase(); // ignore upper and lowercase
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+
+  // names must be equal
+  return 0;
+});
+
+let letters: string[] = [];
+entries.forEach((entry) => {
+  const letter = entry.data.name.last.substring(0, 1);
+  if (!letters.includes(letter)) {
+    letters.push(letter);
+  }
+});
+---
+
+<BaseLayout title="Employees - WSA" description="Employees that worl at WSA">
+  <h1 class="font-gotham-light text-5xl py-24">WSA employees</h1>
+  <div>
+    {
+      letters.map((l) => (
+        <div class="">
+          <div class="border-b-2 border-brand pb-1.5 my-12 font-gotham-bold text-lg">
+            {l}
+          </div>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {entries
+              .filter((entry) => entry.data.name.last.startsWith(l))
+              .map((entry) => (
+                <EmployeeCard employee={entry} />
+              ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

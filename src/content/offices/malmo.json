@@ -1,0 +1,13 @@
+{
+  "name": "Malmö",
+  "phone": "040-685 20 00",
+  "fax": "+46 (0)42-14 10 55",
+  "address": {
+    "street": "Stortorget 8",
+    "city": "Malmö",
+    "postal": "211 34"
+  },
+  "email": "skane@wsa.se",
+  "link": "https://goo.gl/maps/pL5nM5mgWf82",
+  "map": "@assets/maps/MALMO.png"
+}

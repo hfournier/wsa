@@ -1,0 +1,13 @@
+{
+  "name": "Borås",
+  "phone": "010-179 78 00",
+  "fax": "+46 (0)33-21 15 40",
+  "address": {
+    "street": "Kyrkängsgatan 8",
+    "city": "Borås",
+    "postal": "SE-503 38"
+  },
+  "email": "vast@wsa.se",
+  "link": "https://www.google.com/maps/dir//57.7168727,12.9353151/@57.717159,12.935616,16z?hl=sv",
+  "map": "@assets/maps/BORAS.png"
+}

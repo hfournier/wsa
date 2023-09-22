@@ -1,0 +1,12 @@
+{
+  "name": "Umeå",
+  "phone": "08-407 88 00",
+  "address": {
+    "street": "Kungsgatan 62",
+    "city": "Umeå",
+    "postal": "SE- 903 26"
+  },
+  "email": "info@wsa.se",
+  "link": "https://goo.gl/maps/GtUrcqY76CK2",
+  "map": "@assets/maps/UMEA.png"
+}

@@ -1,0 +1,17 @@
+---
+import menu from "../data/menu-main.json";
+---
+
+<nav class="">
+  <ul class="flex gap-10">
+    {
+      menu.map((item) => (
+        <li>
+          <a class="hover:text-white font-gotham-bold" href={item.link}>
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

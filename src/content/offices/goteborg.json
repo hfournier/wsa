@@ -1,0 +1,13 @@
+{
+  "name": "Göteborg",
+  "phone": "010-179 78 00",
+  "fax": "+46 (0)33-21 15 40",
+  "address": {
+    "street": "Magasinsgatan 18 A",
+    "city": "Göteborg",
+    "postal": "SE-411 18"
+  },
+  "email": "vast@wsa.se",
+  "link": "https://goo.gl/maps/9EE9dgtS4AUDwuAFA",
+  "map": "@assets/maps/goteborg-mapsbild.jpg"
+}

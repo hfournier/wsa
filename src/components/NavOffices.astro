@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+const offices = await getCollection("offices");
+---
+
+<nav class="">
+  <ul class="flex flex-col">
+    {
+      offices.map(({ data }) => (
+        <li class="grid grid-cols-3 gap-6">
+          <a class="hover:text-brand font-gotham-bold" href={data.link}>
+            {data.name}
+          </a>
+          <a
+            class="hover:text-brand font-gotham-light"
+            href={`tel:${data.phone}`}>
+            {data.phone}
+          </a>
+          <a
+            class="hover:text-brand font-gotham-light"
+            href={`mailto:${data.email}`}>
+            {data.email}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

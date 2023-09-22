@@ -1,0 +1,30 @@
+{
+  "name": { "first": "Martin", "last": "Bergander" },
+  "position": "Partner and Attorney at Law",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46 (0)70-530 15 36",
+  "email": "martin.bergander@wsa.se",
+  "photo": "@assets/employees/Martin_Bergander_8911_portratt-1000x1000.jpg",
+  "slug": "martinbergander",
+  "description": "“Our strength is to be local but still, through our organisation and our networks, able to handle any assignments for or clients – whatever the issue or wherever it must be done.”",
+  "business_areas": [
+    "Corporate & Enterprise",
+    "Human Resources",
+    "Credit and Insolvency"
+  ],
+  "areas_of_expertise": [
+    "Commercial Contract Law",
+    "Insolvency and Labour Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Lund University", "year": "1997" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://se.linkedin.com/in/martin-bergander-1b13a896",
+  "networks": [
+    "Member of the Board of Directors at WSA",
+    "Active in Connect Väst, Inkubatorn, Drivhuset",
+    "Bankruptcy Trustee, 2011",
+    "Work in company reconstructions"
+  ]
+}

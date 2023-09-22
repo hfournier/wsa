@@ -1,0 +1,13 @@
+{
+  "name": "Stockholm",
+  "phone": "08-407 88 00",
+  "fax": "+46 (0) 8-407 88 01",
+  "address": {
+    "street": "Kungsgatan 36, Box 7836",
+    "city": "Stockholm",
+    "postal": "SE-103 98"
+  },
+  "email": "info@wsa.se",
+  "link": "https://goo.gl/maps/hSEUbsUX5x62",
+  "map": "@assets/maps/STHLM.png"
+}

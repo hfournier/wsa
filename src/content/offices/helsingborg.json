@@ -1,0 +1,13 @@
+{
+  "name": "Helsingborg",
+  "phone": "042-453 79 00",
+  "fax": "+46 (0)42-14 10 55",
+  "address": {
+    "street": "Kungsgatan 2, Box 1422",
+    "city": "Helsingborg",
+    "postal": "SE-251 14"
+  },
+  "email": "skane@wsa.se",
+  "link": "https://www.google.com/maps/dir//G%C3%A4rde+Wesslau+Advokatbyr%C3%A5+i+Sk%C3%A5ne+AB,+Kungsgatan+2,+252+21+Helsingborg/@56.0461676,12.620902,12z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x465232345bdbb8d1:0x61ccddbcc83deefb!2m2!1d12.6909415!2d56.0461874!3e3",
+  "map": "@assets/maps/HELSINGBORG.png"
+}

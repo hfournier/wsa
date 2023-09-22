@@ -1,0 +1,9 @@
+{
+  "name": { "first": "Anna", "last": "Asp" },
+  "position": "Legal Associate",
+  "office": ["Stockholm"],
+  "phone": "+46 (0)8-407 88 55",
+  "email": "anna.asp@wsa.se",
+  "photo": "@assets/employees/WSA2022port_XXX_XXX26712portratt-1000x1000.jpg",
+  "slug": "anna-asp"
+}

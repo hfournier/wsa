@@ -1,0 +1,17 @@
+---
+import menu from "../data/menu-footer.json";
+---
+
+<nav class="">
+  <ul class="flex flex-col">
+    {
+      menu.map((item) => (
+        <li>
+          <a class="hover:text-brand font-gotham-light" href={item.link}>
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

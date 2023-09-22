@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  office: CollectionEntry<"offices">;
+}
+
+const { office } = Astro.props;
+---
+
+<div class="flex flex-col gap-3">
+  <a class="" href={office.data.link}>
+    <Image
+      src={office.data.map}
+      alt={office.data.name}
+      height={500}
+      width={500}
+    />
+  </a>
+  <h2 class="font-gotham-bold text-lg leading-tight">
+    {office.data.name}
+  </h2>
+  <div class="text-sm">Wesslau Söderqvist Advokatbyrå</div>
+  <div class="flex flex-col grow">
+    <div class="text-sm">{office.data.address.street}</div>
+    {
+      office.data.address.postal && (
+        <div class="text-sm">
+          {`${office.data.address.postal} ${office.data.address.city}`}
+        </div>
+      )
+    }
+    {
+      !office.data.address.postal && (
+        <div class="text-sm">
+          {`${office.data.address.city}, ${office.data.address.country}`}
+        </div>
+      )
+    }
+    {office.data.fax && <div class="text-sm">Fax: {office.data.fax}</div>}
+  </div>
+  <div class="flex flex-col gap-1 pt-6 pb-2">
+    <a
+      class="no-underline font-gotham-bold text-xs hover:text-brand"
+      href={`tel:${office.data.phone}`}>{office.data.phone}</a
+    >
+    <a
+      class="no-underline font-gotham-bold text-xs hover:text-brand"
+      href={`mailto:${office.data.email}`}>{office.data.email}</a
+    >
+  </div>
+</div>

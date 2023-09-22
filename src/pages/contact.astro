@@ -1,0 +1,56 @@
+---
+import MapCard from "@components/MapCard.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+
+const offices = await getCollection("offices");
+---
+
+<BaseLayout title="We want to be your business partner" description="">
+  <section class="grid grid-cols-[minmax(0,_2fr)_minmax(0,_3fr)] gap-8 pt-24">
+    <h1 class="font-gotham-light text-[2.5rem] leading-tight">
+      We want to be your business partner
+    </h1>
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <h2 class="font-gotham-bold text-xl">Get in touch with us</h2>
+        <p class="leading-tight">
+          Your business is our main focus, which is why we won’t allow ourselves
+          to be limited by traditional legal areas. In order to achieve results
+          of the utmost use for our clients, we have established extensive
+          partnerships within the areas of tax, accounting, media and business
+          management. We’re not like other law firms – we work more as project
+          managers together with your company’s management. That’s how we make a
+          difference.
+        </p>
+        <p class="leading-tight">
+          Our core values – Business use, Innovation and Courage – are something
+          we always carry with us. We define the goal, find a solution and carry
+          it through. We’ll give straight forward answers and won’t back down
+          from giving unexpected advice. Thanks to our deep expertise, extensive
+          industry knowledge and broad network, we have the tools needed to
+          enable you to take advantage of opportunities that might appear.
+        </p>
+        <p class="leading-tight">
+          We take responsibility for your business. For us, that means taking
+          initiative which will allow your business to reach its full potential.
+          Get in touch with us and let’s talk about it further. To put it simply
+          – we are your self-evident business partner.
+        </p>
+        <a
+          class="no-underline font-gotham-light my-4 px-5 py-1 rounded-full self-start border border-[#ffcd00] hover:text-[#ffcd00]"
+          href="/networks">Our networks</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="pt-24">
+    <h2 class="font-gotham-light text-[2.5rem] leading-tight pb-10">
+      Our Offices
+    </h2>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {offices.map((office) => <MapCard {office} />)}
+    </div>
+  </section>
+</BaseLayout>
