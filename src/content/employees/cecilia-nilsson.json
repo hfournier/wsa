@@ -1,0 +1,20 @@
+{
+  "name": { "first": "Cecilia", "last": "Nilsson" },
+  "position": "Legal Associate",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46 (0)73-719 48 43",
+  "email": "cecilia.nilsson@wsa.se",
+  "photo": "@assets/employees/Cecilia_Nilsson_8309_portratt-1000x1000.jpg",
+  "slug": "cecilia-nilsson",
+  "description": "“Thanks to a local presence, we are able to offer local knowledge and individual advice, while the presence of the agency nationally and its international network mean that we offer the expertise of international class. WSA protects both clients and employees. Here, employees are given development opportunities and long-term client contacts are built together”",
+  "business_areas": ["Human Resources", "Credit and Insolvency"],
+  "areas_of_expertise": [
+    "Commercial Contract Law",
+    "Insolvency and Labour Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "University of Gothenburg", "year": "2020" }
+  ],
+  "languages": ["Swedish", "English", "French"],
+  "linkedIn": "https://www.linkedin.com/in/cecilianilsson-/"
+}

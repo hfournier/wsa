@@ -1,0 +1,24 @@
+{
+  "name": { "first": "John", "last": "Vleugels Antonson" },
+  "position": "Attorney at Law",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46 (0)70-591 47 62",
+  "email": "john.antonson@wsa.se",
+  "photo": "@assets/employees/John_Vleugels_Antonsson_8549_portratt-1000x1000.jpg",
+  "slug": "john-vleugels-antonson",
+  "business_areas": [
+    "Corporate & Enterprise",
+    "Mergers & Acquisitions",
+    "Environment, Energy & Real Estate"
+  ],
+  "areas_of_expertise": [
+    "Construction Contract Law",
+    "Real Estate and Tenancy Law",
+    "Company Acquisitions and Commercial Contract Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "University of Stockholm", "year": "2003" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://www.linkedin.com/in/john-vleugels-antonson-a03a3979/"
+}

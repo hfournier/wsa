@@ -1,0 +1,19 @@
+{
+  "name": { "first": "Pernilla", "last": "Larsson" },
+  "position": "Partner and Attorney of Law",
+  "office": ["Jönköping", "Nässjö"],
+  "phone": "+46 (0)36-35 12 08",
+  "email": "pernilla.larsson@wsa.se",
+  "photo": "@assets/employees/WSA_portratt_Pernilla_Larsson_PORTRATT-1000x1000.jpg",
+  "slug": "pernilla-larsson",
+  "description": "”At WSA, you work in an environment of personally engaged and honest colleagues, where everyone gets the chance to contribute and strive for our common goals. The security of this is immeasurable. The feeling of community, together with the experience and comprehensive front end competence available, lets us deliver high quality results focusing on the business advantage of our clients.”",
+  "business_areas": ["Environment, Energy & Real Estate", "Public Contracts"],
+  "areas_of_expertise": [
+    "Real Estate and Tenancy, Procedural and Arbitration law",
+    "Procurement, Commercial Contract law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Gothenburg University", "year": "2001" }
+  ],
+  "languages": ["Swedish", "English"]
+}

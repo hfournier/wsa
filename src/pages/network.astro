@@ -4,9 +4,18 @@ import iac from "@assets/networks/iac.png";
 import telfa from "@assets/networks/telfa.png";
 import mackrell from "@assets/networks/Screen-Shot-2018-06-18-at-11.36.44-AM.png";
 import { Image } from "astro:assets";
+
+const title = "Network";
+const description =
+  "Our network complements us We know a lot about a lot of things. Still, we know that the best support is sometimes found outside our own office. This is why&hellip;";
+const status = "publish";
+const type = "page";
+const createdAt = new Date("2018-10-09T08:17:12");
+const modifiedAt = new Date("2021-03-22T14:11:22");
+const authorId = 12;
 ---
 
-<BaseLayout title="We want to be your business partner" description="">
+<BaseLayout {title} {description}>
   <section class="pt-12 lg:pt-24">
     <h1 class="font-gotham-light text-[2.5rem] leading-tight">Our networks</h1>
     <div class="flex flex-wrap justify-between pt-10">

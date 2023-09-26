@@ -1,0 +1,21 @@
+{
+  "name": { "first": "Oscar", "last": "Creutz" },
+  "position": "Attorney at law",
+  "office": ["Jönköping", "Nässjö"],
+  "phone": "+46 (0)36-35 12 16",
+  "email": "oscar.creutz@wsa.se",
+  "photo": "@assets/employees/WSA_portratt_Oscar_Creutz_PORTRATT-1000x1000.jpg",
+  "slug": "oscar-creutz",
+  "description": "“You’ll find the greatest strength of WSA is right among all of us who work here. Competent and accommodating personnel working hard as a team to keep both clients and colleagues happy.”",
+  "business_areas": ["Corporate & Enterprise", "Credit and insolvency"],
+  "areas_of_expertise": [
+    "Insolvency law",
+    "Commercial contract law",
+    "Corporate law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Örebro University", "year": "2018" }
+  ],
+  "languages": ["Swedish", "English"],
+  "linkedIn": "https://www.linkedin.com/in/oscar-creutz-20515ab3"
+}

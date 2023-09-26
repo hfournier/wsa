@@ -1,8 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "About us";
+const description =
+  "At WSA, we look beyond the old ideas and boundaries of a traditional law firm.";
+const status = "publish";
+const type = "page";
+const createdAt = new Date("2018-10-09T08:38:13");
+const modifiedAt = new Date("2021-04-12T14:00:37");
+const authorId = 12;
 ---
 
-<BaseLayout title="We want to be your business partner" description="">
+<BaseLayout {title} {description}>
   <section
     class="grid md:grid-cols-[minmax(0,_2fr)_minmax(0,_3fr)] gap-8 pt-12 lg:pt-24">
     <h1 class="font-gotham-light text-[2.5rem] leading-tight">

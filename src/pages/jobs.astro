@@ -1,8 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Jobs";
+const description =
+  "Your future at WSA We have settled with old preconceptions of how law firms should be, both regarding our business and our co-workers. We don’t believe in endless nights of&hellip;";
+const status = "publish";
+const type = "page";
+const createdAt = new Date("2018-10-09T08:32:56");
+const modifiedAt = new Date("2021-03-22T14:00:31");
+const authorId = 12;
 ---
 
-<BaseLayout title="We want to be your business partner" description="">
+<BaseLayout {title} {description}>
   <section class="pt-12 lg:pt-24">
     <h1 class="font-gotham-light text-[2.5rem] leading-tight">
       Open positions

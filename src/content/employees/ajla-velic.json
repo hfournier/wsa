@@ -1,0 +1,19 @@
+{
+  "name": { "first": "Ajla", "last": "Velic" },
+  "position": "Legal Associate",
+  "office": ["Borås", "Göteborg"],
+  "phone": "+46 (0)73-230 50 32",
+  "email": "ajla.velic@wsa.se",
+  "photo": "@assets/employees/Ajla_Velic_web-1000x1000.jpg",
+  "slug": "ajla-velic",
+  "business_areas": ["Mergers & Acquisitions"],
+  "areas_of_expertise": [
+    "Corporate Law",
+    "Mergers & Acquisitions, Contract Law"
+  ],
+  "education": [
+    { "degree": "LL.M.", "school": "Gothenburg University", "year": "2022" }
+  ],
+  "languages": ["Swedish", "English", "Bosnian", "Serbian", "Croatian"],
+  "linkedIn": "https://www.linkedin.com/in/ajla-velic-ba997915b/"
+}

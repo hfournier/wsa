@@ -1,10 +1,16 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
+
+const title = "Business Areas";
+const description = "Through our business areas, we put your business first";
+const status = "publish";
+const type = "page";
+const createdAt = new Date("2018-10-05T15:42:36");
+const modifiedAt = new Date("2019-01-28T14:03:08");
+const authorId = 15;
 ---
 
-<BaseLayout
-  title="Through our business areas, we put your business first"
-  description="">
+<BaseLayout {title} {description}>
   <div class="grid md:grid-cols-2 gap-8 pt-12 lg:pt-24">
     <h1 class="font-gotham-light text-[2.5rem] leading-tight">
       Through our business areas, we put your business first
