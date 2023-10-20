@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths, InferGetStaticParamsType, Page } from "astro";
+import {
+  getCollection,
+  type ContentCollectionKey,
+  type CollectionEntry,
+} from "astro:content";
+import BlogList from "@components/BlogList.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const wpcts = await getCollection("wp-content-types");
+
+  let contentCollections = [];
+  for (const ct of wpcts) {
+    const name = ct.data.collectionName as ContentCollectionKey;
+    const slug = ct.data.slug;
+    const entries = (await getCollection(name)).sort(
+      (a, b) =>
+        new Date(b.data.createdAt).valueOf() -
+        new Date(a.data.createdAt).valueOf()
+    );
+    contentCollections.push({ name, slug, entries });
+  }
+
+  return contentCollections.flatMap((cc) => {
+    const entries = cc.entries;
+    return paginate(entries, { params: { collection: cc.slug }, pageSize: 10 });
+  });
+}) satisfies GetStaticPaths;
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+let { collection } = Astro.params as Params;
+interface Props {
+  page: Page<CollectionEntry<ContentCollectionKey>>;
+}
+const { page } = Astro.props;
+---
+
+<BlogList {page} {collection} />

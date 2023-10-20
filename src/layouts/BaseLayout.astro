@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import "../styles/tailwind.css";
 import "../styles/fonts.css";
 
 const { title, description } = Astro.props;
@@ -10,7 +11,7 @@ const { title, description } = Astro.props;
 <html lang="en">
   <BaseHead {title} {description} />
   <body
-    class="bg-[#10151b] text-[#d1d5db] max-w-5xl mx-auto p-5 min-h-screen grid grid-cols-1 grid-rows-[auto_minmax(0,_1fr)_auto]">
+    class="scrollable bg-[#10151b] text-[#d1d5db] max-w-5xl mx-auto p-5 min-h-screen grid grid-cols-1 grid-rows-[auto_minmax(0,_1fr)_auto]">
     <Header />
     <main>
       <slot />

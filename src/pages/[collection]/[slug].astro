@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getAllCollections } from "@utils/helpers";
+
+export const getStaticPaths = (async () => {
+  const content = await getAllCollections();
+  return content.flat().map((entry) => {
+    return {
+      params: { slug: entry.slug, collection: entry.collection },
+      props: { entry },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry } = Astro.props as Props;
+const { collection } = Astro.params;
+
+const { Content, headings } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article
+    class="grid gap-12 md:grid-cols-[1fr,_2fr] lg:grid-cols-[3fr,_5fr] py-12 lg:py-[6.5rem]">
+    <header class="flex flex-col gap-6 prose-h1:mb-0 prose-img:my-0">
+      <h1 class="font-gotham-light text-[2.5rem] leading-tight break-all">
+        <span transition:name={`t-${entry.slug}`}>{entry.data.title}</span>
+      </h1>
+      {
+        entry.data.featuredMedia !== undefined &&
+          entry.data.featuredMedia.id !== 0 && (
+            <Image
+              class=""
+              src={entry.data.featuredMedia.src}
+              alt={entry.data.featuredMedia.alt || "Alt text mising"}
+              loading="eager"
+              transition:name={`fm-${entry.slug}`}
+            />
+          )
+      }
+    </header>
+    <div class="space-y-6">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import {
+  getEntry,
+  type CollectionEntry,
+  type ContentCollectionKey,
+} from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogCard from "./BlogCard.astro";
+import Pagination from "./Pagination.astro";
+import type { Page } from "astro";
+
+interface Props {
+  page: Page<CollectionEntry<ContentCollectionKey>>;
+  collection: string;
+}
+
+const { page, collection } = Astro.props;
+const wpContentTypes = await getEntry("wp-content-types", collection);
+---
+
+{
+  wpContentTypes && (
+    <BaseLayout
+      title={wpContentTypes.data.title}
+      description={wpContentTypes.data.description}>
+      <section transition:animate="fade">
+        <h1 class="font-gotham-light text-3xl md:text-[2.5rem] lg:text-5xl py-12 lg:py-[6.5rem]">
+          {wpContentTypes.data.title}
+        </h1>
+        <div class="flex flex-col gap-24">
+          {page.data.map((entry) => (
+            <BlogCard
+              title={entry.data.title}
+              link={`/${collection}/${entry.slug}`}
+              slug={entry.slug}
+              mediaSrc={entry.data.featuredMedia?.src}
+              mediaAlt={entry.data.featuredMedia?.alt}
+              date={entry.data.createdAt}>
+              {entry.data.description}
+            </BlogCard>
+          ))}
+        </div>
+        {page.total > 12 && (
+          <Pagination
+            prevUrl={page.url.prev}
+            currentUrl={page.url.current}
+            nextUrl={page.url.next}
+            currentPage={page.currentPage}
+            lastPage={page.lastPage}
+          />
+        )}
+      </section>
+    </BaseLayout>
+  )
+}

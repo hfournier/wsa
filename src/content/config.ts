@@ -1,12 +1,68 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, reference } from "astro:content";
+
+const Content = ({ image }) =>
+  z.object({
+    wpId: z.number(),
+    title: z.string(),
+    description: z.string(),
+    draft: z.boolean().optional(),
+    type: z.string(),
+    createdAt: z.date(),
+    modifiedAt: z.date(),
+    authorId: z.number().optional(),
+    categories: z.array(reference("categories")).optional(),
+    tags: z.array(reference("tags")).optional(),
+    featuredMedia: z
+      .object({
+        id: z.number(),
+        src: image(),
+        alt: z.string(),
+        caption: z.string().optional(),
+      })
+      .optional(),
+  });
+
+const Category = z.object({
+  wpId: z.number(),
+  count: z.number(),
+  name: z.string(),
+  description: z.string().optional(),
+  slug: z.string().optional(),
+});
+
+const Tag = z.object({
+  wpId: z.number(),
+  count: z.number(),
+  name: z.string(),
+  description: z.string().optional(),
+  slug: z.string().optional(),
+});
+
+const WPContentType = z.object({
+  title: z.string(),
+  description: z.string(),
+  collectionName: z.string(),
+  slug: z.string(),
+});
 
 const blogCollection = defineCollection({
   type: "content", // v2.5.0 and later
-  schema: z.object({
-    title: z.string(),
-    tags: z.array(z.string()),
-    image: z.string().optional(),
-  }),
+  schema: Content,
+});
+
+const categoriesCollection = defineCollection({
+  type: "data", // v2.5.0 and later
+  schema: Category,
+});
+
+const tagsCollection = defineCollection({
+  type: "data", // v2.5.0 and later
+  schema: Tag,
+});
+
+const wpContentTypesCollection = defineCollection({
+  type: "data", // v2.5.0 and later
+  schema: WPContentType,
 });
 
 const officesCollection = defineCollection({
@@ -61,7 +117,10 @@ const employeesCollection = defineCollection({
 });
 
 export const collections = {
-  //   blog: blogCollection,
+  blog: blogCollection,
+  categories: categoriesCollection,
+  tags: tagsCollection,
+  "wp-content-types": wpContentTypesCollection,
   employees: employeesCollection,
   offices: officesCollection,
 };

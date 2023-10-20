@@ -1,0 +1,55 @@
+---
+import type { GetStaticPaths, Page } from 'astro'
+import Pagination from '@components/Pagination.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { getCollection, type CollectionEntry } from 'astro:content'
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const entries = (await getCollection('categories')).sort((a, b) => {
+		const nameA = a.data.name.toUpperCase() // ignore upper and lowercase
+		const nameB = b.data.name.toUpperCase() // ignore upper and lowercase
+		if (nameA < nameB) {
+			return -1
+		}
+		if (nameA > nameB) {
+			return 1
+		}
+
+		// names must be equal
+		return 0
+	})
+
+	return paginate(entries, { pageSize: 12 })
+}) satisfies GetStaticPaths
+
+interface Props {
+	page: Page<CollectionEntry<'categories'>>
+}
+const { page } = Astro.props
+---
+
+<BaseLayout title="All the Categories" description="Description of all the categories">
+	<section transition:animate="fade">
+		<h1>Categories</h1>
+		<ul>
+			{
+				page.data.map((entry) => (
+					<li>
+						<a href={`/category/${entry.data.slug}`}>{entry.data.name}</a>
+					</li>
+				))
+			}
+		</ul>
+		{
+			page.total > 12 && (
+				<Pagination
+					prevUrl={page.url.prev}
+					currentUrl={page.url.current}
+					nextUrl={page.url.next}
+					currentPage={page.currentPage}
+					lastPage={page.lastPage}
+				/>
+			)
+		}
+	</section>
+</BaseLayout>

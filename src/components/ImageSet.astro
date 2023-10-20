@@ -1,0 +1,47 @@
+---
+import type { GetImageResult } from 'astro'
+import { getImage } from 'astro:assets'
+
+interface Props extends astroHTML.JSX.ImgHTMLAttributes {
+	src: string
+	srcImage: ImageMetadata
+	sizes: string
+	alt: string
+	widths: number[]
+}
+
+const { src, srcImage, sizes, alt, widths, ...attrs } = Astro.props
+
+const createSrcSet = async (): Promise<string> => {
+	let srcsetPromises: Promise<GetImageResult>[] = []
+	let srcsetResults: GetImageResult[]
+	widths.forEach((width) => {
+		if (width === 0) {
+			srcsetPromises.push(getImage({ src: srcImage }))
+		} else {
+			srcsetPromises.push(getImage({ src: srcImage, width }))
+		}
+	})
+
+	srcsetResults = await Promise.all(srcsetPromises)
+
+	// reconstruct a new srcset
+	let srcsetNew = ''
+	srcsetResults.forEach((item) => {
+		if (item.rawOptions.width !== undefined) {
+			srcsetNew = srcsetNew.concat(srcsetNew ? ', ' : '', `${item.src} ${item.rawOptions.width}w`)
+		} else {
+			srcsetNew = srcsetNew.concat(srcsetNew ? ', ' : '', `${item.src}`)
+		}
+	})
+
+	return srcsetNew
+}
+---
+
+{!srcImage && src && <img src={src} alt={alt} {...attrs} />}
+{
+	srcImage && (
+		<img src={srcImage.src} srcset={await createSrcSet()} sizes={sizes} alt={alt} {...attrs} />
+	)
+}

@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  link: string;
+  slug: string;
+  mediaSrc?: any;
+  mediaAlt?: string;
+  date: Date;
+}
+
+const { link, title, slug, mediaSrc, mediaAlt = "", date } = Astro.props;
+const postDate = date.toLocaleDateString("sw", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<div
+  class="w-full flex flex-col lg:flex-row lg:even:flex-row-reverse gap-12 lg:gap-0">
+  {
+    mediaSrc && (
+      <Image
+        class="md:max-w-[600px] lg:max-w-[35%] self-center object-cover aspect-square"
+        src={mediaSrc}
+        alt={mediaAlt}
+        transition:name={`fm-${slug}`}
+      />
+    )
+  }
+  <div class="flex flex-col gap-8 sm:pl-8 md:max-w-[600px] md:mx-auto">
+    <time class="font-gotham-bold text-sm" datetime={date.toISOString()}
+      >{postDate}</time
+    >
+    <a class="" href={link}>
+      <h2 class="font-gotham-light text-3xl lg:text-4xl hover:text-brand">
+        <span transition:name={`t-${slug}`}>{title}</span>
+      </h2>
+    </a>
+    <a
+      class="no-underline font-gotham-light px-5 py-1 rounded-full self-start border border-brand hover:text-brand"
+      href={`/blog/${slug}`}>Läs mer</a
+    >
+  </div>
+</div>
